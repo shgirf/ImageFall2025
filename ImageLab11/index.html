@@ -2,6 +2,30 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@r128/examples/js/loaders/ColladaLoader.js"></script>
+    <script>
+      AFRAME.registerComponent('collada-model', {
+        schema: {
+          src: { type: 'model' },
+          scale: { type: 'vec3', default: { x: 1, y: 1, z: 1 } },
+          position: { type: 'vec3', default: { x: 0, y: 0, z: 0 } }
+        },
+        init: function() {
+          const loader = new THREE.ColladaLoader();
+          const data = this.data;
+          const el = this.el;
+          
+          loader.load(data.src, (collada) => {
+            const model = collada.scene;
+            model.scale.set(data.scale.x, data.scale.y, data.scale.z);
+            el.setObject3D('mesh', model);
+            el.emit('model-loaded', { format: 'collada', model: model });
+          }, undefined, (error) => {
+            console.error('Error loading COLLADA model:', error);
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <a-scene>
