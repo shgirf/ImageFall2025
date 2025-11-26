@@ -17,12 +17,15 @@
   </head>
   <body>
     <a-scene>
-      <a-obj-model position = "0 0 -4" material="shader:flat;src:#tex1" src="#monkey1Body"></a-obj-model>
-      <a-obj-model position = "0 0 -4" material="shader:flat;src:#tex3" src="#monkey1Eyes"></a-obj-model>
-      <a-obj-model position = "0 0 -4" material="shader:flat;src:#tex2" src="#monkey1FeetHands"></a-obj-model>
-      <a-obj-model position = "0 0 4" material="shader:flat;src:#tex1" src="#monkey2Body"></a-obj-model>
-      <a-obj-model position = "0 0 4" material="shader:flat;src:#tex3" src="#monkey2Eyes"></a-obj-model>
-      <a-obj-model position = "0 0 4" material="shader:flat;src:#tex2" src="#monkey2FeetHands"></a-obj-model>
+            
+      <a-obj-model position="-7 -49 -39" rotation = "-70 0 0" material="shader:standard;src:#tex1;roughness:0.7;metalness:0.2" src="#monkey1Body"></a-obj-model>
+      <a-obj-model position="-7 -49 -39" rotation = "-70 0 0" material="shader:standard;src:#tex3;roughness:0.5;metalness:0" src="#monkey1Eyes"></a-obj-model>
+      <a-obj-model position="-7 -49 -39" rotation = "-70 0 0" material="shader:standard;src:#tex2;roughness:0.8;metalness:0.1" src="#monkey1FeetHands"></a-obj-model>
+      
+      <a-obj-model position="56 -19 45" rotation = "270 0 180" material="shader:standard;src:#tex1;roughness:0.7;metalness:0.2" src="#monkey2Body"></a-obj-model>
+      <a-obj-model position="56 -19 45" rotation = "270 0 180 " material="shader:standard;src:#tex3;roughness:0.5;metalness:0" src="#monkey2Eyes"></a-obj-model>
+      <a-obj-model position="56 -19 45" rotation = "270 0 180" material="shader:standard;src:#tex2;roughness:0.8;metalness:0.1" src="#monkey2FeetHands"></a-obj-model>
+      
       <a-sky tag="BridgeEdited" src="assets/BridgeEdited.jpg"></a-sky>
     </a-scene>
   </body>
